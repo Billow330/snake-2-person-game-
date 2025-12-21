@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>贪吃蛇游戏</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="game-header">
+            <h1>🐍 贪吃蛇游戏</h1>
+            <div class="score-board">
+                <div class="score-item" style="background: linear-gradient(135deg, #2ecc71 0%, #27ae60 100%);">
+                    <span class="label">蛇1 (绿色):</span>
+                    <span id="score1">0</span>
+                </div>
+                <div class="score-item" style="background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);">
+                    <span class="label">蛇2 (蓝色):</span>
+                    <span id="score2">0</span>
+                </div>
+                <div class="score-item">
+                    <span class="label">最高分:</span>
+                    <span id="highScore">0</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="game-wrapper">
+            <canvas id="gameCanvas" width="600" height="600"></canvas>
+            <div id="gameOver" class="game-over hidden">
+                <h2>游戏结束!</h2>
+                <p id="winner" style="font-size: 1.3em; font-weight: bold; color: #e74c3c; margin: 15px 0;"></p>
+                <p>最终得分: <span id="finalScore">0</span></p>
+                <button id="restartBtn" class="restart-btn">重新开始</button>
+            </div>
+            <div id="startScreen" class="start-screen">
+                <h2>欢迎来到双人贪吃蛇!</h2>
+                <p><strong>蛇1 (绿色):</strong> 使用方向键 ↑↓←→ 控制</p>
+                <p><strong>蛇2 (蓝色):</strong> 使用 WASD 键控制</p>
+                <p>吃到食物可以增长并获得分数</p>
+                <p style="color: #e74c3c; font-weight: bold;">撞到墙壁、自己或对方都会失败！</p>
+                <button id="startBtn" class="start-btn">开始游戏</button>
+            </div>
+        </div>
+        
+        <div class="controls">
+            <div class="control-buttons">
+                <button class="control-btn" id="upBtn">↑</button>
+                <div class="middle-row">
+                    <button class="control-btn" id="leftBtn">←</button>
+                    <button class="control-btn" id="downBtn">↓</button>
+                    <button class="control-btn" id="rightBtn">→</button>
+                </div>
+            </div>
+            <div class="instructions">
+                <p>💡 提示: 蛇1用方向键控制，蛇2用WASD控制</p>
+            </div>
+        </div>
+    </div>
+    
+    <script src="game.js"></script>
+</body>
+</html>
+
